@@ -23,13 +23,13 @@ public class Store {
     private Long id;
 
     @Column(length = 100, nullable = false)
-    private String name;
+    public String name;
 
     @Column(length = 14, nullable = false)
-    private String cnpj;
+    public String cnpj;
 
     @Column(length = 30, nullable = false)
-    private String lineOfBusiness;
+    public String lineOfBusiness;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy= "store")
     private List<Product> products = new ArrayList<>();
