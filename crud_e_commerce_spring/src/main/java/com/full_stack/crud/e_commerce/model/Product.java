@@ -1,7 +1,5 @@
 package com.full_stack.crud.e_commerce.model;
 
-import java.math.BigDecimal;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import jakarta.persistence.Column;
@@ -36,6 +34,9 @@ public class Product {
 
     @Column(nullable = false)
     private String urlImage;
+
+    @Column(nullable = false)
+    private Integer stock;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "store_id", nullable = false)

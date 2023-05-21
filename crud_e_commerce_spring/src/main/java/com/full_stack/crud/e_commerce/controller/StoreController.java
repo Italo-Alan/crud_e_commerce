@@ -3,8 +3,6 @@ package com.full_stack.crud.e_commerce.controller;
 import java.util.List;
 import java.util.Optional;
 
-import javax.swing.text.html.Option;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -57,7 +55,6 @@ public class StoreController {
     public Store update(@PathVariable Long id, @RequestBody Store store){
         return storeService.update(id, store);
     }
-
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)

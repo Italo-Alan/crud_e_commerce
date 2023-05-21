@@ -31,4 +31,18 @@ public class ProductService {
     public void delete(Long id){
         productRepository.deleteById(id);
     }
+
+    public Product update(Long id, Product product){
+        return productRepository.findById(id)
+            .map(recordFound -> {
+                recordFound.setCode(product.getCode());
+                recordFound.setDescription(product.getDescription());
+                recordFound.setName(product.getName());
+                recordFound.setPrice(product.getPrice());
+                recordFound.setStock(product.getStock());
+                recordFound.setUrlImage(product.getUrlImage());
+                return productRepository.save(recordFound);
+            })
+            .orElseThrow(() -> new RuntimeException("Registro não encontrado"));
+    }
 }

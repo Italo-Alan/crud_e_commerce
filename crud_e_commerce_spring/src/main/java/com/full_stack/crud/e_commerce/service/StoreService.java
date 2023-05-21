@@ -7,17 +7,14 @@ import org.springframework.stereotype.Service;
 
 import com.full_stack.crud.e_commerce.model.Product;
 import com.full_stack.crud.e_commerce.model.Store;
-import com.full_stack.crud.e_commerce.repository.ProductRepository;
 import com.full_stack.crud.e_commerce.repository.StoreRepository;
 
 @Service
 public class StoreService {
     private final StoreRepository storeRepository;
-    private final ProductRepository productRepository;
 
-    public StoreService(StoreRepository storeRepository, ProductRepository productRepository){
+    public StoreService(StoreRepository storeRepository){
         this.storeRepository = storeRepository;
-        this.productRepository = productRepository;
     }
 
     public List<Store> findAll(){
